@@ -30,7 +30,7 @@ android {
 
 dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly 'com.android.support:appcompat-v7:23.0.1'
+    compileOnly rootProject.ext.hasProperty('supportLibVersion') ? 'com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}' : 'com.android.support:appcompat-v7:23.0.1'
     compileOnly "com.facebook.react:react-native:+"
 }
 
